@@ -18,7 +18,8 @@ In simple terms, it introduces an intermediate entity that acts as a "bridge" be
 - **Event Handling**: In GUI applications, event listeners act as intermediaries, reducing direct coupling between user interface elements and business logic.
 - **Dependency Injection**: The Indirection principle is also at play in Dependency Injection frameworks, where the framework controls how objects are instantiated and connected.
 ## Example: Notification System
-Scenario:
+- Scenario:
 We have a notification system that sends notifications to users via Email, SMS, or Push Notifications. We use the Indirection principle to keep the system flexible.
 ---
-
+## Lecture:
+https://github.com/user-attachments/assets/f83db59b-f652-40fe-b04f-c984c14f012d
