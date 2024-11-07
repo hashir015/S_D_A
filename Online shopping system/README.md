@@ -69,3 +69,6 @@ By implementing these principles, an Online Shopping System ensures a smooth, se
 ---
 ## Lecture:
 https://github.com/user-attachments/assets/e2579022-a346-4be4-99f1-b1d807ed5b39
+## Diagrams:
+https://github.com/user-attachments/assets/2d71b0aa-64ce-4cd2-a2a1-48d01d4ce663
+
