@@ -66,3 +66,6 @@ An Online Shopping System is a web-based platform that allows customers to brows
 - **Customer Service Integration**: Integrates with customer support tools for quick resolutions.
 
 By implementing these principles, an Online Shopping System ensures a smooth, secure, and efficient shopping experience for users while providing reliability and scalability for businesses operating the platform.
+---
+## Lecture:
+https://github.com/user-attachments/assets/e2579022-a346-4be4-99f1-b1d807ed5b39
