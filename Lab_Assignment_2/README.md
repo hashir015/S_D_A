@@ -48,10 +48,50 @@ The solution involved:
 4. **RabbitMQ Management Plugin**: Pre-installed with RabbitMQ Docker image.
 
 ---
+##
+Running the Services
+Each microservice is located in its respective folder. To start a service:
 
-## Setting Up the Project
+Navigate to the service directory:
 
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/your-repo/playback-microservices.git
-   cd playback-microservices
+bash
+Copy code
+cd <service-directory>
+Run the service:
+
+bash
+Copy code
+mvn spring-boot:run
+Repeat for the following services:
+
+start-service
+pause-service
+stop-service
+queue-manager-service
+queue-processor
+Services Ports
+Service	Port
+start-service	8081
+pause-service	8082
+stop-service	8083
+queue-manager-service	8080
+queue-processor	N/A
+Testing the System
+You can test the system using Postman or curl commands.
+
+Send Requests to the Queue Manager
+Start Playback:
+
+bash
+Copy code
+curl -X POST -H "Content-Type: application/json" -d '{"action": "start"}' http://localhost:8080/queue_action
+Pause Playback:
+
+bash
+Copy code
+curl -X POST -H "Content-Type: application/json" -d '{"action": "pause"}' http://localhost:8080/queue_action
+Stop Playback:
+
+bash
+Copy code
+curl -X POST -H "Content-Type: application/json" -d '{"action": "stop"}' http://localhos
