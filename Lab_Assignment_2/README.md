@@ -48,3 +48,4 @@ The solution involved:
 4. **RabbitMQ Management Plugin**: Pre-installed with RabbitMQ Docker image.
 
 ---
+
