@@ -1,18 +1,57 @@
-## Getting Started
+# Playback Microservices System
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+This project demonstrates how a bottleneck in a playback service was resolved by transitioning from a monolithic architecture to a microservices architecture. The system uses Spring Boot and RabbitMQ for asynchronous messaging.
 
-## Folder Structure
+---
 
-The workspace contains two folders by default, where:
+## Problem Statement
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+In the monolithic system, a single playback service handled all user actions (start, pause, stop). This caused issues during high traffic, such as:
+- **Delayed responses** during peak hours.
+- **Service crashes** due to overloaded servers.
+- **Difficulty scaling** to meet demand.
+- **Downtime** when deploying updates.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+---
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+## Solution Overview
 
-## Dependency Management
+The solution involved:
+1. **Decoupling the playback actions** into separate microservices:
+   - **Start Service**
+   - **Pause Service**
+   - **Stop Service**
+2. Using **RabbitMQ** for asynchronous communication between services.
+3. Implementing a **Queue Manager** to route user requests to a message queue.
+4. Adding a **Queue Processor** to handle queued requests independently.
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+---
+
+## System Architecture
+
+- **Microservices**:
+  - `start-service`: Handles playback start requests.
+  - `pause-service`: Handles playback pause requests.
+  - `stop-service`: Handles playback stop requests.
+- **Queue Manager Service**:
+  - Accepts user requests and queues them using RabbitMQ.
+- **Queue Processor**:
+  - Processes requests from the queue asynchronously.
+
+---
+
+## Prerequisites
+
+1. **Java Development Kit (JDK)**: Version 11 or higher.
+2. **Maven**: For building the project.
+3. **Docker**: To run RabbitMQ locally.
+4. **RabbitMQ Management Plugin**: Pre-installed with RabbitMQ Docker image.
+
+---
+
+## Setting Up the Project
+
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/your-repo/playback-microservices.git
+   cd playback-microservices
