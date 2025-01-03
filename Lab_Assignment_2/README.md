@@ -94,4 +94,5 @@ Stop Playback:
 
 bash
 Copy code
-curl -X POST -H "Content-Type: application/json" -d '{"action": "stop"}' http://localhos
+curl -X POST -H "Content-Type: application/json" -d '{"action": "stop"}' http://localhost:8080/queue_action
+---
